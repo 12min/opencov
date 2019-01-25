@@ -32,7 +32,7 @@ config :seedex, repo: Opencov.Repo
 config :opencov, :email,
   sender: "OpenCov <info@opencov.com>",
   smtp: [
-    relay: "smtp.mailgun.org",
+    relay: System.get_env("SMTP_HOST") || "smtp.mailgun.org",
     username: System.get_env("SMTP_USER") || "info@opencov.com",
     password: System.get_env("SMTP_PASSWORD") || "I wouldn't share this",
     port: 587,
